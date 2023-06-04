@@ -4,7 +4,7 @@ Let's learn some more about images and image formats with Rust.
 
 Let's start with a simple example: load an image and get information about it. This is basically the same example given in the [image](https://github.com/image-rs/image/blob/master/README.md#opening-and-saving-images) crate.
 
-```language-rust
+```rust
 use image::{GenericImageView};
 
 fn main() {
