@@ -1,3 +1,5 @@
+mod combine_images;
+
 use image::{DynamicImage, GenericImageView, GrayImage, ImageBuffer, Luma, Rgba};
 
 fn make_gray_cross() -> GrayImage {
@@ -34,6 +36,7 @@ fn show_image_details(path: &str) {
 }
 
 fn main() {
+    // Lesson 1
     let mut path;
 
     path = "tests/images/gray_cross.png";
@@ -45,4 +48,11 @@ fn main() {
     let img = make_rgba16_cross();
     img.save(path).unwrap();
     show_image_details(path);
+
+    // Lesson 2
+    let guy = image::open("tests/images/guy.png").unwrap();
+    let girl = image::open("tests/images/girl.png").unwrap();
+
+    let new_image = combine_images::combine_side_by_side(guy, girl);
+    new_image.save("tests/images/combined.png").unwrap();
 }
